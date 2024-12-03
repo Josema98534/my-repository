@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD CON ARRAYS</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .btn-update {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .btn-delete {
+            background-color: #f44336;
+            color: white;
+        }
+        .btn.secondary {
+            background-color: #808080;
+            color: white;
+            min-width: 120px;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+        .form-group {
+            margin-bottom: 10px;
+        }
+        .form-actions {
+            margin-top: 10px;
+        }
+        /* Estilo para el nuevo botón */
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 15px;
+            gap: 15px;
+            background-color: #007ACC;
+            outline: 3px #007ACC solid;
+            outline-offset: -3px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: 400ms;
+        }
+
+        .button .text {
+            color: white;
+            font-weight: 700;
+            font-size: 1em;
+            transition: 400ms;
+        }
+
+        .button svg path {
+            transition: 400ms;
+        }
+
+        .button:hover {
+            background-color: transparent;
+        }
+
+        .button:hover .text {
+            color: #007ACC;
+        }
+
+        .button:hover svg path {
+            fill: #007ACC;
+        }
+    </style>
+</head>
+<body>
+    <h1>TABLA PARA ELIMINAR Y ACTUALIZAR DATOS</h1>
+    <br>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>CORREO</th>
+                <th>DOMICILIO</th>
+                <th>CIUDAD</th>
+                <th>ACCIONES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Las filas se añadirán dinámicamente -->
+        </tbody>
+    </table>
+    <br><br>
+    <!-- Nuevo botón estilizado -->
+    <button type="button" id="show-form-btn" class="button">
+        <span class="text">Formulario</span>
+    </button>
+    
+    <div id="form-section" class="hidden">
+        <h1 id="form-title">Nuevo Registro</h1>
+        <form id="record-form">
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Apellido:</label>
+                <input type="text" id="last-name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="dom">Domicilio:</label>
+                <input type="text" id="dom" required>
+            </div>
+            <div class="form-group">
+                <label for="city">Ciudad:</label>
+                <input type="text" id="city" required>
+            </div>
+            <div class="form-actions">
+                <button type="submit" id="submit-btn" class="btn primary">Guardar</button>
+                <button type="button" id="form-cancel-btn" class="btn secondary">Cancelar</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
